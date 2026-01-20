@@ -33,7 +33,7 @@ class ChangePasswordPlugin implements Plugin
       ->userMenuItems([
         MenuItem::make()
           ->label('Change Password')
-          ->url('/' . $panel->getId() .  '/change-password')
+          ->url(fn() => ChangePasswordPage::getUrl())
           ->icon('heroicon-o-key')
           ->visible(fn(): bool => self::canAccess()),
       ]);
